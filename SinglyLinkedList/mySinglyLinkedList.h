@@ -1,5 +1,5 @@
-
-using namespace std;
+#ifndef SINGLY_LINKED_LIST
+#define SINGLY_LINKED_LIST      
 
 class Node {
     public:
@@ -32,3 +32,4 @@ class SinglyLinkedList {
         Node *tail;
 
 };
+#endif
