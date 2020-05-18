@@ -1,9 +1,5 @@
 #include <iostream>
-#include <string>
-#include <stack>
-#include <cstring>
 #include <vector>
-#include <algorithm>
 #include "mySinglyLinkedList.cpp"
 
 using namespace std;
