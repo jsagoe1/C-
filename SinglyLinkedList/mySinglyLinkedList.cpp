@@ -38,7 +38,7 @@ void SinglyLinkedList::addToHead(int val) {
     if (isEmpty()){
         head = tail = new_node;
     }
-    else if (head == tail and head != 0){
+    else if (head == tail && head != 0){
         new_node->next = head;
         head = new_node;
     }
