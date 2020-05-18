@@ -9,7 +9,7 @@
 using namespace std;
 
 
-void LinkedList::addNodeAtIndex(int val, int idx = 0) {
+void SinglyLinkedList::addNodeAtIndex(int val, int idx = 0) {
     if (idx >= getSize()){
         addToTail(val);
     }
@@ -34,11 +34,11 @@ void LinkedList::addNodeAtIndex(int val, int idx = 0) {
     }
 }
 
-bool LinkedList::isEmpty() {
+bool SinglyLinkedList::isEmpty() {
     return (head == 0);
 }
 
-void LinkedList::addToHead(int val) {
+void SinglyLinkedList::addToHead(int val) {
     Node* new_node = new Node(val);
     if (isEmpty()){
         head = tail = new_node;
@@ -49,7 +49,7 @@ void LinkedList::addToHead(int val) {
     }
 }
 
-void LinkedList::addToTail(int val) {
+void SinglyLinkedList::addToTail(int val) {
     Node *new_node = new Node(val);
     if (isEmpty()){
         head = tail = new_node;
@@ -64,7 +64,7 @@ void LinkedList::addToTail(int val) {
     }
 }
 
-bool LinkedList::isInList(int val){
+bool SinglyLinkedList::isInList(int val){
     if (isEmpty()) {
         return false;
     }
@@ -80,7 +80,7 @@ bool LinkedList::isInList(int val){
     }
 }
 
-int LinkedList::deleteFromHead(){
+int SinglyLinkedList::deleteFromHead(){
     if (isEmpty()){
         cout << "List is Empty!"<<endl;
         return -11111111;
@@ -97,7 +97,7 @@ int LinkedList::deleteFromHead(){
     }
 }
 
-int LinkedList::deleteFromTail(){
+int SinglyLinkedList::deleteFromTail(){
     if (isEmpty()){
         cout << "List is Empty!!"<<endl;
         return -11111111;
@@ -124,7 +124,7 @@ int LinkedList::deleteFromTail(){
     }
 }
 
-void LinkedList::FindAndDeleteNode(int val){
+void SinglyLinkedList::FindAndDeleteNode(int val){
     if (isInList(val) == 0)
     {
         cout << val << " not in List!" << endl;
@@ -152,7 +152,7 @@ void LinkedList::FindAndDeleteNode(int val){
     }
 }
 
-int LinkedList::getSize(){
+int SinglyLinkedList::getSize(){
     if(isEmpty()){
         return 0;
     }
@@ -170,7 +170,7 @@ int LinkedList::getSize(){
     }
 }
 
-void LinkedList::printList(){
+void SinglyLinkedList::printList(){
     cout <<"[";
     if (head==tail && head != 0){
         cout<<head->val;
