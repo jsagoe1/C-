@@ -15,13 +15,14 @@ class Node {
     Node(int v, Node* n = 0) {
         val = v; next = n;
     }
+
     int val;
     Node* next;
 };
 
-class LinkedList {
+class SinglyLinkedList {
     public:
-        LinkedList()
+        SinglyLinkedList()
         {
             head = tail = 0;
         }
