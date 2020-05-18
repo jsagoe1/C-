@@ -3,9 +3,6 @@ using namespace std;
 
 class Node {
     public:
-    Node(){
-        next = 0;
-    }
     Node(int v, Node* n = 0) {
         val = v; next = n;
     }
