@@ -15,7 +15,6 @@ class Node {
     Node(int v, Node* n = 0) {
         val = v; next = n;
     }
-
     int val;
     Node* next;
 };
