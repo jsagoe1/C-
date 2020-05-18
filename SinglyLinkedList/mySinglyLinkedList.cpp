@@ -4,7 +4,7 @@
 #include <cstring>
 #include <vector>
 #include <algorithm>
-#include "mylinkedList.h"
+#include "mySinglyLinkedList.h"
 
 using namespace std;
 
