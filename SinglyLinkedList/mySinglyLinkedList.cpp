@@ -4,6 +4,36 @@
 using namespace std;
 
 
+bool SinglyLinkedList::isEmpty() {
+    return (head == 0 && tail == 0);
+}
+
+void SinglyLinkedList::addToHead(int val) {
+    Node* new_node = new Node(val);
+    if (isEmpty()){
+        head = tail = new_node;
+    }
+    else {
+        new_node->next = head;
+        head = new_node;
+    }
+}
+
+void SinglyLinkedList::addToTail(int val) {
+    Node *new_node = new Node(val);
+    if (isEmpty()){
+        head = tail = new_node;
+    }
+    else if (head == tail && head != 0) {
+        head->next = new_node;
+        tail = new_node;
+    }
+    else{
+        tail->next = new_node;
+        tail = new_node;
+    }
+}
+
 void SinglyLinkedList::addNodeAtIndex(int val, int idx = 0) {
     if (idx >= getSize()){
         addToTail(val);
@@ -26,52 +56,6 @@ void SinglyLinkedList::addNodeAtIndex(int val, int idx = 0) {
                 track += 1;
             }
         }
-    }
-}
-
-bool SinglyLinkedList::isEmpty() {
-    return (head == 0);
-}
-
-void SinglyLinkedList::addToHead(int val) {
-    Node* new_node = new Node(val);
-    if (isEmpty()){
-        head = tail = new_node;
-    }
-    else if (head == tail && head != 0){
-        new_node->next = head;
-        head = new_node;
-    }
-}
-
-void SinglyLinkedList::addToTail(int val) {
-    Node *new_node = new Node(val);
-    if (isEmpty()){
-        head = tail = new_node;
-    }
-    else if (head == tail && head != 0) {
-        head->next = new_node;
-        tail = new_node;
-    }
-    else{
-        tail->next = new_node;
-        tail = new_node;
-    }
-}
-
-bool SinglyLinkedList::isInList(int val){
-    if (isEmpty()) {
-        return false;
-    }
-    else {
-        Node* cur = head;
-        while(cur){
-            if (cur->val == val){
-                return true;
-            }
-            cur = cur->next;
-        }
-        return false;
     }
 }
 
@@ -116,6 +100,22 @@ int SinglyLinkedList::deleteFromTail(){
         tail = cur;
         tail->next = 0;
         return ret;
+    }
+}
+
+bool SinglyLinkedList::isInList(int val){
+    if (isEmpty()) {
+        return false;
+    }
+    else {
+        Node* cur = head;
+        while(cur){
+            if (cur->val == val){
+                return true;
+            }
+            cur = cur->next;
+        }
+        return false;
     }
 }
 
