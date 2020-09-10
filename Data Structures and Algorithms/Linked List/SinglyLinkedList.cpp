@@ -211,14 +211,4 @@ void SinglyLinkedList<T>::sort() {
 	s.clear();			// to save some memory, instead of delete
 }
 
-template <typename T>
-void SinglyLinkedList<T>::assign(const SinglyLinkedList<T>& s) {
-	std::cout << "copy constructor called" << std::endl;
-	if (s.isEmpty()) { return; }
-	std::shared_ptr<ListNode<T>> source = s.head;   //returns the stored pointer
-	std::cout << "Head copied<<" << source->data << std::endl;
-	while (source != nullptr) {
-		insertBack(source->data);
-		source = source->next;
-	}
-}
+
