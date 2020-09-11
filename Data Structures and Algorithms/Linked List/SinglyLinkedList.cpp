@@ -224,7 +224,7 @@ void SinglyLinkedList<T>::assign(const SinglyLinkedList<T>& s) {
 
 template <typename T>
 void SinglyLinkedList<T>::removeDups() {
-	if (this->size() < 2) { return; }      //accounts for empty and 1 element
+	if (size() < 2) { return; }      //accounts for empty and 1 element
 	//2 or more
 	std::set<T> seen;
 	seen.insert(head->data);
