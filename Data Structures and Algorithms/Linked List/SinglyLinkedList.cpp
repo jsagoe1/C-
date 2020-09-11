@@ -211,4 +211,36 @@ void SinglyLinkedList<T>::sort() {
 	s.clear();			// to save some memory, instead of delete
 }
 
+template <typename T>
+void SinglyLinkedList<T>::assign(const SinglyLinkedList<T>& s) {
+	if (s.isEmpty()) { return; }
+	std::shared_ptr<ListNode<T>> source = s.head;   //returns the stored pointer
+	std::cout << "Head copied<<" << source->data << std::endl;
+	while (source != nullptr) {
+		insertBack(source->data);
+		source = source->next;
+	}
+}
+
+template <typename T>
+void SinglyLinkedList<T>::removeDups() {
+	if (this->size() < 2) { return; }      //accounts for empty and 1 element
+	//2 or more
+	std::set<T> seen;
+	seen.insert(head->data);
+
+	std::shared_ptr<ListNode<T>> prev = head;
+	typedef std::shared_ptr<ListNode<T>> nptr;
+	//O(n) time
+	for (nptr cur = head->next; cur != nullptr; cur = cur->next) {
+		if (seen.find(cur->data) != seen.end()) {
+			continue;
+		}
+		seen.insert(cur->data);
+		prev->next = cur;
+		prev = cur;
+	}
+	tail = prev;
+}
+
 
