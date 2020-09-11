@@ -1,6 +1,7 @@
 /* 
 Singly Linked List Class template
 using smart pointers
+
 */
 
 #ifndef SINGLY_LINKED_LIST
@@ -23,21 +24,22 @@ template <typename T>
 class SinglyLinkedList {
 public:
 	SinglyLinkedList<T>() { head = nullptr; tail = nullptr; };	
-	void insertFront(T value);								//insertfront
-	void insertBack(T value);								//insertback
-	void insertAtIndex(int idx, T value);							//insertAtindex
-	void erase(T value);									//remove Node
-	bool searchElement(T value);								//searchElement
+	void insertFront(T value);
+	void insertBack(T value);															//insertback
+	void insertAtIndex(int idx, T value);														//insertAtindex
+	void erase(T value);																//remove Node
+	bool searchElement(T value);														//searchElement
 	bool isEmpty() const;
 	void clear();
 	void assign(const SinglyLinkedList<T>& s);
 	void sort();
+	void removeDups();
 	int size();
 
 	template <typename T>
 	friend std::ostream& operator <<(std::ostream& os, const SinglyLinkedList<T>& s);	//ostream overload 
-	T&  operator[](int i);									//subscripting operator overload
-											
+	T&  operator[](int i);																//subscripting operator overload
+																		//sort the list
 	
 private:
 	std::shared_ptr<ListNode<T>> head, tail;
